@@ -96,6 +96,7 @@ func main() {
 		fmt.Println(result)
 
 	} else if len(firstFile) == 3 {
+
 		result, err := forOne(firstFile[1])
 
 		if err != nil {
@@ -103,16 +104,14 @@ func main() {
 			return
 		}
 
-		fmt.Println(result)
-
-		result, err = forOne(firstFile[2])
+		resultSecond, err := forOne(firstFile[2])
 
 		if err != nil {
 			fmt.Println("Ошибка", err)
 			return
 		}
 
-		fmt.Println(result)
+		fmt.Println(result, resultSecond)
 		// Про 2 файла написано – «программа соединяет их и печатает содержимое обоих файлов на экран», но ниже в таблице показано, что выводит 2 файла последовательно. Сделал как в таблице.
 	} else {
 		err := forAssociation(firstFile[1], firstFile[2], firstFile[3])
